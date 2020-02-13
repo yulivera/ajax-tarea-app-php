@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tarea App</title>
+	<link rel="stylesheet" type="text/css" href="core/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+<!--++++++++++++ NAVEGACION CON BUSCAR +++++++++++++++++++-->
+<nav class="navbar navbar-expland-lg navbar-dark bg-dark">
+	<a href="#" class="navbar-brank">AppTarea</a>
+	<ul class="navbar-nav ml-auto">
+		<form class="form-inline my-2 my-lg-0">
+			<!-- id search -->
+			<input type="search" id="search" class="form-control mr-sm-2" placeholder="Busca tu tarea">
+			<button id="miob" class="btn btn-success my-2 my-sm-0" type="submit">
+			Buscar
+		   </button>
+		</form>
+	</ul>
+</nav>
+<!--+++++++++++++++++++ FORMULARIO  ++++++++++++++++++-->
+<div class="container p-4" >
+	<!-- fila con dos columnas -->
+
+	<div class="row">
+		<!-- columna 1 -->
+		<div class="col-md-5">
+			<div class="card">
+				<div class="card-body bg-dark">
+					<form id="task-form"> 
+						<!-- oculto hidden -->
+						<input type="hidden" id="taskId" >
+						<div class="form-group">
+							<!-- <input type="" name=""> -->
+							<input type="text" id="name" placeholder="Tu nombre" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<textarea id="descripcion" cols="30" rows="10" class="form-control" placeholder="Tarea Descripcion" required></textarea>
+						</div>
+						<button type="submit" class="btn btn-primary btn-block" class="text-center">Guardar Tarea</button>
+					</form>
+					
+				</div>
+			</div>
+		</div>
+	<!--++++++++ columna 2 TABLA MUESTRA ++++++++++++++++-->
+		<div class="col-md-7">
+			<!-- muestra resultados de busqueda en id container -->
+			<div class="card my-4" id="task-result">
+				<div class="card-body">
+					<ul id="container"></ul>
+				</div>
+			</div> <!-- fin busqueda -->
+			<!-- +++++ TABLA ++++++++++++++++++++++++ -->
+			<table class="table table-bordered table-sm">
+				<thead>
+					<tr>
+						<td>Id</td>
+						<td>Name</td>
+						<td>Descripcion</td>
+						<td>Accion</td>
+					</tr>
+				</thead>
+				<!-- id para colocar aqui ajax -->
+				<tbody id="tasks"></tbody> 
+			</table>
+		</div>   <!-- fin col 2 -->
+		
+	</div>
+
+</div>
+
+<!-- scrip -->
+
+<script src="core/jquery-3.1.1.min.js"></script>
+<script src="core/js/popper.min.js"></script>
+<script src="app.js" ></script>
+
+
+</body>
+</html>
